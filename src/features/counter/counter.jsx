@@ -15,12 +15,8 @@ const Counter = (props) => {
   return (
     <div>
       <div>
-        <button aria-label="Increment value" onClick={clickIncrement}>
-          +
-        </button>
-        <button aria-label="Decrement value" onClick={clickDecrement}>
-          -
-        </button>
+        <button onClick={clickIncrement}>+</button>
+        <button onClick={clickDecrement}>-</button>
         <hr />
         <span>{count}</span>
       </div>
