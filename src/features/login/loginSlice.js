@@ -1,12 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+const sleep = (n) => new Promise((resolve) => setTimeout(resolve, n));
+
 export const login = createAsyncThunk(
   "login/login",
   async (userId, { rejectWithValue }) => {
     try {
       return userId;
     } catch (err) {
-      return rejectWithValue(err.reponse.data);
+      rejectWithValue(err.reponse.data);
     }
   }
 );

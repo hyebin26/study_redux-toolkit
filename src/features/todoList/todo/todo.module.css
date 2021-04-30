@@ -1,0 +1,25 @@
+.finishContainer {
+  width: 17rem;
+  height: 13rem;
+  border: 3px solid black;
+}
+
+.todoContainer {
+  width: 17rem;
+  margin-bottom: 1rem;
+  height: 13rem;
+  border: 3px solid black;
+}
+.form {
+  width: 17rem;
+  display: flex;
+  padding-bottom: 2rem;
+}
+.input {
+  width: 90%;
+  height: 2rem;
+  outline: none;
+}
+.button {
+  width: 10%;
+}

@@ -1,0 +1,17 @@
+.input {
+  width: 90%;
+  height: 2rem;
+  outline: none;
+}
+.button {
+  width: 10%;
+}
+.form {
+  width: 17rem;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.container {
+  padding: 2rem 0;
+}

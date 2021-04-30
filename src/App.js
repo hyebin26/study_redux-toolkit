@@ -1,14 +1,13 @@
 import React from "react";
-import Counter2 from "./features/counter2/counter2";
-import Login from "./features/login/login";
-import Posts from "./features/posts/posts";
+import Title from "./features/todoList/title/title";
+import Todo from "./features/todoList/todo/todo";
+import styles from "./app.module.css";
 
 const App = (props) => {
   return (
-    <div>
-      <Counter2 />
-      <Posts />
-      <Login />
+    <div className={styles.container}>
+      <Title />
+      <Todo />
     </div>
   );
 };

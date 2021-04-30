@@ -1,0 +1,14 @@
+.deleteBtn {
+  width: 2.5rem;
+  margin: 0 0.4rem;
+}
+.content {
+  margin: 0.1rem 0.3rem;
+}
+.finishBtn {
+  width: 2.5rem;
+  background-color: blueviolet;
+}
+.item {
+  text-decoration: line-through;
+}
