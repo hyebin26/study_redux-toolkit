@@ -1,22 +1,22 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { inputTitle } from "./titleSlice";
-import styles from "./title.module.css";
+import { addName } from "../../modules/addNameSlice";
+import styles from "./addName.module.css";
 
-const Title = (props) => {
-  const name = useSelector((state) => state.title.title);
+const AddName = (props) => {
+  const name = useSelector((state) => state.addName);
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
+  const [userName, setUserName] = useState("");
 
   const clickTitleBtn = (e) => {
     e.preventDefault();
-    dispatch(inputTitle(title));
+    dispatch(addName(userName));
   };
-  const titleChange = useCallback(
+  const nameInputChange = useCallback(
     (e) => {
-      setTitle(e.target.value);
+      setUserName(e.target.value);
     },
-    [title]
+    [userName]
   );
   return (
     <>
@@ -30,8 +30,8 @@ const Title = (props) => {
             className={styles.input}
             type="text"
             placeholder="이름을 입력해주세요"
-            value={title}
-            onChange={titleChange}
+            value={userName}
+            onChange={nameInputChange}
           />
           <button onClick={clickTitleBtn} className={styles.button}>
             입력
@@ -42,4 +42,4 @@ const Title = (props) => {
   );
 };
 
-export default Title;
+export default AddName;

@@ -1,12 +1,12 @@
 import React from "react";
-import Title from "./features/todoList/title/title";
-import Todo from "./features/todoList/todo/todo";
 import styles from "./app.module.css";
+import AddName from "./components/addName/addName";
+import Todo from "./components/todo/todo";
 
 const App = (props) => {
   return (
     <div className={styles.container}>
-      <Title />
+      <AddName />
       <Todo />
     </div>
   );

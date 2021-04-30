@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TodoList from "../todoList/todoList";
-import { addTodo } from "./todoSlice";
+import { addTodo } from "../../modules/todoSlice";
 import styles from "./todo.module.css";
 import FinishTodo from "../finishTodo/finishTodo";
 
-const Todo = (props) => {
+const Todo = () => {
   const todoList = useSelector((state) => state.todo.todoList);
   const finishTodoList = useSelector((state) => state.todo.finishTodoList);
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Todo = (props) => {
   const onChangeTodo = (e) => {
     setContent(e.target.value);
   };
-  const clickTodo = (e) => {
+  const clickAddTodo = (e) => {
     e.preventDefault();
     if (content === "") return false;
     dispatch(addTodo({ id: todoId, todo: content }));
@@ -31,7 +31,7 @@ const Todo = (props) => {
           onChange={onChangeTodo}
           placeholder="오늘 할 일을 입력해주세요"
         />
-        <button onClick={clickTodo} className={styles.button}>
+        <button onClick={clickAddTodo} className={styles.button}>
           입력
         </button>
       </form>

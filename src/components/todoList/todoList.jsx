@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { deleteTodo, finishTodoList } from "../todo/todoSlice";
+import { deleteTodo, finishTodoList } from "../../modules/todoSlice";
 import styles from "./todoList.module.css";
 
 const TodoList = ({ content, id }) => {

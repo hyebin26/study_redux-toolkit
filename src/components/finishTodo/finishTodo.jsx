@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./finishTodo.module.css";
-import { deleteTodo, notFinishTodoList } from "../todo/todoSlice";
+import { deleteTodo, notFinishTodoList } from "../../modules/todoSlice";
 
 const FinishTodo = ({ content, id }) => {
   const dispatch = useDispatch();
