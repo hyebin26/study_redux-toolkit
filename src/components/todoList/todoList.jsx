@@ -1,9 +1,9 @@
-import React, { memo, useRef } from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, finishTodoList } from "../../modules/todoSlice";
 import styles from "./todoList.module.css";
 
-const TodoList = memo(({ content, id }) => {
+const TodoList = ({ content, id }) => {
   const dispatch = useDispatch();
   const liRef = useRef();
   const deleteClick = () => {
@@ -27,6 +27,6 @@ const TodoList = memo(({ content, id }) => {
       </li>
     </ul>
   );
-});
+};
 
 export default TodoList;

@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from "react";
+import React, { memo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addName } from "../../modules/addNameSlice";
 import styles from "./addName.module.css";
 
-const AddName = (props) => {
+const AddName = memo(() => {
   const name = useSelector((state) => state.addName);
   const dispatch = useDispatch();
   const [userName, setUserName] = useState("");
@@ -12,12 +12,10 @@ const AddName = (props) => {
     e.preventDefault();
     dispatch(addName(userName));
   };
-  const nameInputChange = useCallback(
-    (e) => {
-      setUserName(e.target.value);
-    },
-    [userName]
-  );
+  const nameInputChange = (e) => {
+    setUserName(e.target.value);
+  };
+
   return (
     <>
       {name ? (
@@ -40,6 +38,6 @@ const AddName = (props) => {
       )}
     </>
   );
-};
+});
 
 export default AddName;

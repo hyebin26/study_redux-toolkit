@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TodoList from "../todoList/todoList";
 import { addTodo } from "../../modules/todoSlice";
@@ -11,9 +11,9 @@ const Todo = () => {
   const dispatch = useDispatch();
   const [content, setContent] = useState("");
   const [todoId, setTodoId] = useState(0);
-  const onChangeTodo = (e) => {
+  const onChangeTodo = useCallback((e) => {
     setContent(e.target.value);
-  };
+  }, []);
   const clickAddTodo = (e) => {
     e.preventDefault();
     if (content === "") return false;
@@ -40,7 +40,9 @@ const Todo = () => {
         {todoList.length === 0 ? (
           <li>할 일을 입력해주세요!</li>
         ) : (
-          todoList.map((item) => <TodoList content={item.todo} id={item.id} />)
+          todoList.map((item, key) => (
+            <TodoList content={item.todo} id={item.id} key={key} />
+          ))
         )}
       </ul>
       <h2>완료!</h2>
@@ -48,8 +50,8 @@ const Todo = () => {
         {finishTodoList.length === 0 ? (
           <li>할 일을 끝내주세요!</li>
         ) : (
-          finishTodoList.map((item) => (
-            <FinishTodo content={item.todo} id={item.id} />
+          finishTodoList.map((item, key) => (
+            <FinishTodo content={item.todo} id={item.id} key={key} />
           ))
         )}
       </ul>

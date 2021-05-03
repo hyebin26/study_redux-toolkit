@@ -1,9 +1,9 @@
-import React, { memo, useRef } from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./finishTodo.module.css";
 import { deleteTodo, notFinishTodoList } from "../../modules/todoSlice";
 
-const FinishTodo = memo(({ content, id }) => {
+const FinishTodo = ({ content, id }) => {
   const dispatch = useDispatch();
   const liRef = useRef();
   const deleteClick = () => {
@@ -26,6 +26,6 @@ const FinishTodo = memo(({ content, id }) => {
       </li>
     </ul>
   );
-});
+};
 
 export default FinishTodo;
